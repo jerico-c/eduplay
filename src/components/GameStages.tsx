@@ -1,7 +1,8 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GameLevel } from '@/types/GameTypes';
+import { useState, useEffect } from 'react';
+import { toast } from '@/hooks/use-toast';
 
 interface GameStagesProps {
   currentLevel: GameLevel;
@@ -15,6 +16,13 @@ interface GameStagesProps {
   onAnswerSelect: (answer: number) => void;
 }
 
+interface AvailableIcon {
+  id: string;
+  isCorrect: boolean;
+  image: string;
+  objectName: string;
+}
+
 const GameStages = ({
   currentLevel,
   currentStage,
@@ -26,6 +34,90 @@ const GameStages = ({
   onProceedToNextStage,
   onAnswerSelect,
 }: GameStagesProps) => {
+  const [availableIcons, setAvailableIcons] = useState<AvailableIcon[]>([]);
+  const [draggedCorrectItems, setDraggedCorrectItems] = useState(0);
+
+  // Initialize available icons when level changes
+  useEffect(() => {
+    const correctCount = currentLevel.concrete.correctCount;
+    const totalIcons = Math.max(10, correctCount + 3); // At least 10 icons, or correctCount + 3 distractors
+    
+    const icons: AvailableIcon[] = [];
+    
+    // Add correct items
+    for (let i = 0; i < correctCount; i++) {
+      icons.push({
+        id: `correct-${i}`,
+        isCorrect: true,
+        image: (currentLevel.concrete as any).displayImage,
+        objectName: currentLevel.concrete.objectName
+      });
+    }
+    
+    // Get other object images for distractors
+    const allObjects = ['Blangkon', 'Wayang', 'Gamelan', 'Candi', 'Keris'];
+    const objectImages: { [key: string]: string } = {
+      'Blangkon': '/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png',
+      'Wayang': '/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png',
+      'Gamelan': '/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png',
+      'Candi': '/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png',
+      'Keris': '/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png'
+    };
+    
+    const otherObjects = allObjects.filter(obj => obj !== currentLevel.concrete.objectName);
+    
+    // Add distractor items
+    const distractorCount = totalIcons - correctCount;
+    for (let i = 0; i < distractorCount; i++) {
+      const randomObject = otherObjects[Math.floor(Math.random() * otherObjects.length)];
+      icons.push({
+        id: `distractor-${i}`,
+        isCorrect: false,
+        image: objectImages[randomObject],
+        objectName: randomObject
+      });
+    }
+    
+    // Shuffle the icons
+    const shuffledIcons = icons.sort(() => Math.random() - 0.5);
+    setAvailableIcons(shuffledIcons);
+    setDraggedCorrectItems(0);
+  }, [currentLevel]);
+
+  const handleIconDragStart = (e: React.DragEvent, iconId: string) => {
+    e.dataTransfer.setData('iconId', iconId);
+    onDragStart(e);
+  };
+
+  const handleIconDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    const iconId = e.dataTransfer.getData('iconId');
+    const draggedIcon = availableIcons.find(icon => icon.id === iconId);
+    
+    if (draggedIcon && draggedCorrectItems < currentLevel.concrete.correctCount) {
+      // Check if the dragged icon is correct
+      if (draggedIcon.isCorrect) {
+        // Remove the icon from available icons
+        setAvailableIcons(prev => prev.filter(icon => icon.id !== iconId));
+        setDraggedCorrectItems(prev => prev + 1);
+        
+        toast({
+          title: "Bagus!",
+          description: `Benar! ${draggedIcon.objectName} berhasil dimasukkan!`,
+        });
+      } else {
+        // Wrong icon - show error message but don't add to basket
+        toast({
+          title: "Oops!",
+          description: `Itu bukan ${currentLevel.concrete.objectName}! Coba lagi ya!`,
+          variant: "destructive"
+        });
+      }
+    }
+    
+    onDrop(e);
+  };
+
   const renderConcreteStage = () => (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader className="text-center">
@@ -39,24 +131,20 @@ const GameStages = ({
       <CardContent>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-center">{currentLevel.concrete.objectName} tersedia:</h3>
+            <h3 className="text-lg font-semibold text-center">Objek tersedia:</h3>
             <div className="grid grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              {availableIcons.map((icon) => (
                 <div
-                  key={item}
+                  key={icon.id}
                   draggable
-                  onDragStart={onDragStart}
+                  onDragStart={(e) => handleIconDragStart(e, icon.id)}
                   className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center cursor-move hover:scale-110 transition-transform shadow-lg"
                 >
-                  {currentLevel.concrete.objectName === 'Blangkon' ? (
-                    <img 
-                      src={(currentLevel.concrete as any).displayImage} 
-                      alt="Blangkon" 
-                      className="w-12 h-12 object-contain"
-                    />
-                  ) : (
-                    <span className="text-2xl">{(currentLevel.concrete as any).displayImage}</span>
-                  )}
+                  <img 
+                    src={icon.image} 
+                    alt={icon.objectName} 
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -65,31 +153,31 @@ const GameStages = ({
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-center">Keranjang Jero:</h3>
             <div
-              onDrop={onDrop}
+              onDrop={handleIconDrop}
               onDragOver={onDragOver}
               className="w-full h-48 border-4 border-dashed border-orange-300 rounded-lg flex flex-col items-center justify-center bg-orange-50 hover:bg-orange-100 transition-colors"
             >
-              <div className="text-4xl mb-2">🦏</div>
+              <img 
+                src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+                alt="Jero the Rhino" 
+                className="w-16 h-16 object-contain mb-2"
+              />
               <div className="flex space-x-2 mb-2 flex-wrap justify-center">
-                {[...Array(draggedItems)].map((_, i) => (
+                {[...Array(draggedCorrectItems)].map((_, i) => (
                   <div key={i}>
-                    {currentLevel.concrete.objectName === 'Blangkon' ? (
-                      <img 
-                        src={(currentLevel.concrete as any).displayImage} 
-                        alt="Blangkon" 
-                        className="w-8 h-8 object-contain"
-                      />
-                    ) : (
-                      <span className="text-2xl">{(currentLevel.concrete as any).displayImage}</span>
-                    )}
+                    <img 
+                      src={(currentLevel.concrete as any).displayImage} 
+                      alt={currentLevel.concrete.objectName} 
+                      className="w-8 h-8 object-contain"
+                    />
                   </div>
                 ))}
               </div>
               <p className="text-gray-600 font-medium">
-                {draggedItems}/{currentLevel.concrete.correctCount} {currentLevel.concrete.objectName}
+                {draggedCorrectItems}/{currentLevel.concrete.correctCount} {currentLevel.concrete.objectName}
               </p>
             </div>
-            {draggedItems === currentLevel.concrete.correctCount && (
+            {draggedCorrectItems === currentLevel.concrete.correctCount && (
               <Button
                 onClick={onProceedToNextStage}
                 className="w-full bg-green-500 hover:bg-green-600"
@@ -115,21 +203,21 @@ const GameStages = ({
       </CardHeader>
       <CardContent className="text-center">
         <div className="mb-8">
-          <div className="text-6xl mb-4">🦏</div>
+          <img 
+            src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+            alt="Jero the Rhino" 
+            className="w-24 h-24 object-contain mx-auto mb-4"
+          />
           <p className="text-lg mb-6">Jero berkata: "Lihat! Aku punya {currentLevel.concrete.objectName} sebanyak ini:"</p>
           
           <div className="flex justify-center space-x-2 mb-6 flex-wrap">
             {[...Array(currentLevel.concrete.correctCount)].map((_, i) => (
               <div key={i} className="animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}>
-                {currentLevel.concrete.objectName === 'Blangkon' ? (
-                  <img 
-                    src={(currentLevel.concrete as any).displayImage} 
-                    alt="Blangkon" 
-                    className="w-12 h-12 object-contain"
-                  />
-                ) : (
-                  <span className="text-4xl">{(currentLevel.concrete as any).displayImage}</span>
-                )}
+                <img 
+                  src={(currentLevel.concrete as any).displayImage} 
+                  alt={currentLevel.concrete.objectName} 
+                  className="w-12 h-12 object-contain"
+                />
               </div>
             ))}
           </div>
@@ -165,7 +253,11 @@ const GameStages = ({
       </CardHeader>
       <CardContent className="text-center">
         <div className="mb-8">
-          <div className="text-6xl mb-4">🦏</div>
+          <img 
+            src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+            alt="Jero the Rhino" 
+            className="w-24 h-24 object-contain mx-auto mb-4"
+          />
           <p className="text-lg mb-6">Jero bertanya: "Berapa hasil dari operasi ini?"</p>
           
           <div className="bg-gray-100 rounded-lg p-8 mb-8">

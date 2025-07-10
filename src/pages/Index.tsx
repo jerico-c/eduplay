@@ -61,7 +61,11 @@ const Index = () => {
             {/* Character Jero */}
             <div className="relative mb-8">
               <div className="w-48 h-48 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
-                <div className="text-8xl">🦏</div>
+                <img 
+                  src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+                  alt="Jero the Rhino" 
+                  className="w-40 h-40 object-contain"
+                />
               </div>
               <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full px-3 py-1 text-sm font-bold text-orange-800 shadow-lg animate-pulse">
                 Jero!
@@ -144,12 +148,47 @@ const Index = () => {
           {/* Cultural Elements */}
           <div className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-8 mb-8">
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Budaya Yogyakarta</h3>
-            <div className="flex justify-center space-x-8 text-4xl mb-4">
-              <div title="Candi Prambanan">🏛️</div>
-              <div title="Batik Kawung">🌸</div>
-              <div title="Blangkon">👑</div>
-              <div title="Keris">⚔️</div>
-              <div title="Gudeg">🥘</div>
+            <div className="flex justify-center space-x-8 mb-4">
+              <div className="flex flex-col items-center" title="Candi Prambanan">
+                <img 
+                  src="/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png" 
+                  alt="Candi" 
+                  className="w-12 h-12 object-contain mb-1"
+                />
+                <span className="text-xs text-gray-600">Candi</span>
+              </div>
+              <div className="flex flex-col items-center" title="Blangkon">
+                <img 
+                  src="/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png" 
+                  alt="Blangkon" 
+                  className="w-12 h-12 object-contain mb-1"
+                />
+                <span className="text-xs text-gray-600">Blangkon</span>
+              </div>
+              <div className="flex flex-col items-center" title="Keris">
+                <img 
+                  src="/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png" 
+                  alt="Keris" 
+                  className="w-12 h-12 object-contain mb-1"
+                />
+                <span className="text-xs text-gray-600">Keris</span>
+              </div>
+              <div className="flex flex-col items-center" title="Wayang">
+                <img 
+                  src="/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png" 
+                  alt="Wayang" 
+                  className="w-12 h-12 object-contain mb-1"
+                />
+                <span className="text-xs text-gray-600">Wayang</span>
+              </div>
+              <div className="flex flex-col items-center" title="Gamelan">
+                <img 
+                  src="/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png" 
+                  alt="Gamelan" 
+                  className="w-12 h-12 object-contain mb-1"
+                />
+                <span className="text-xs text-gray-600">Gamelan</span>
+              </div>
             </div>
             <p className="text-gray-700">
               Jelajahi keindahan budaya Yogyakarta sambil belajar matematika!

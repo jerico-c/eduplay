@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { GameLevel, GameState, CurrentStage } from '@/types/GameTypes';
@@ -29,10 +28,10 @@ const GameContainer = ({ onBackToHome }: GameContainerProps) => {
     const objects = ['Blangkon', 'Wayang', 'Gamelan', 'Candi', 'Keris'];
     const objectImages: { [key: string]: string } = {
       'Blangkon': '/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png',
-      'Wayang': '🎭',
-      'Gamelan': '🎵',
-      'Candi': '🏛️',
-      'Keris': '⚔️'
+      'Wayang': '/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png',
+      'Gamelan': '/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png',
+      'Candi': '/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png',
+      'Keris': '/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png'
     };
 
     return Array.from({ length: 5 }, (_, index) => {
