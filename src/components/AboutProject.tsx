@@ -34,27 +34,10 @@ const AboutProject = ({ onBackToHome }: AboutProjectProps) => {
               Tentang Jerico EduPlay
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Sebuah portfolio hidup yang menggabungkan teknologi modern dengan metodologi pembelajaran terdepan
+              Sebuah portfolio yang menggabungkan teknologi modern dengan metodologi pembelajaran terdepan
             </p>
           </div>
 
-          {/* Inspiration Section */}
-          <Card className="mb-8 border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-2xl text-orange-700">
-                <Heart className="w-6 h-6" />
-                <span>Inspirasi Proyek</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                <strong>Jerico EduPlay</strong> terinspirasi oleh visi dan misi <strong>PT Sebangku Jaya Abadi</strong> 
-                dan brand <strong>MARICA</strong> dalam menghadirkan inovasi pembelajaran yang menyenangkan. 
-                Proyek ini dirancang khusus untuk menunjukkan pemahaman mendalam terhadap metodologi pembelajaran 
-                yang menjadi andalan perusahaan, sekaligus mengimplementasikannya dalam bentuk aplikasi web interaktif.
-              </p>
-            </CardContent>
-          </Card>
 
           {/* Methodology Section */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -71,7 +54,7 @@ const AboutProject = ({ onBackToHome }: AboutProjectProps) => {
                     <div className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-sm font-bold text-green-800">C</div>
                     <div>
                       <h4 className="font-semibold text-green-800">Concrete</h4>
-                      <p className="text-sm text-gray-600">Pembelajaran dengan objek nyata (drag-and-drop blangkon)</p>
+                      <p className="text-sm text-gray-600">Pembelajaran dengan objek nyata (drag-and-drop icon)</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -117,70 +100,7 @@ const AboutProject = ({ onBackToHome }: AboutProjectProps) => {
             </Card>
           </div>
 
-          {/* Technical Section */}
-          <Card className="mb-8 border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-2xl text-blue-700">
-                <Code className="w-6 h-6" />
-                <span>Arsitektur Teknologi</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold text-lg text-blue-800 mb-3">Frontend (React)</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span>React 18 dengan TypeScript</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span>Tailwind CSS untuk styling responsif</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span>Shadcn/ui untuk komponen UI</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span>Drag & Drop API untuk interaksi</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span>Animasi CSS untuk feedback visual</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-purple-800 mb-3">Backend (Laravel) - Konsep</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span>RESTful API untuk data cerita</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span>Endpoint konfigurasi level game</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span>Sistem penyimpanan skor</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span>CMS sederhana untuk konten</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span>Middleware authentication</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
+        
           {/* Cultural Elements Section */}
           <Card className="mb-8 border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50">
             <CardHeader>
@@ -192,24 +112,24 @@ const AboutProject = ({ onBackToHome }: AboutProjectProps) => {
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-3xl mb-2">🏛️</div>
-                  <h4 className="font-semibold">Candi Prambanan</h4>
+                  <img src="/image/candi.png"></img>
+                  <h4 className="font-semibold">Candi</h4>
                   <p className="text-sm text-gray-600">Setting utama petualangan</p>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-3xl mb-2">👑</div>
+                  <img src="/image/blangkon.png"></img>
                   <h4 className="font-semibold">Blangkon</h4>
                   <p className="text-sm text-gray-600">Objek pembelajaran utama</p>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-3xl mb-2">🦏</div>
+                 <img src="/image/jero.png"></img>
                   <h4 className="font-semibold">Badak Jawa</h4>
                   <p className="text-sm text-gray-600">Karakter Jero sebagai guide</p>
                 </div>
               </div>
               <p className="text-gray-700 mt-4 text-center">
                 Setiap elemen dipilih untuk mencerminkan kekayaan budaya Indonesia, 
-                sejalan dengan misi PT Sebangku Jaya Abadi dalam melestarikan nilai-nilai lokal.
+                sejalan dengan misi melestarikan nilai-nilai lokal.
               </p>
             </CardContent>
           </Card>
@@ -266,10 +186,9 @@ const AboutProject = ({ onBackToHome }: AboutProjectProps) => {
       <footer className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-6 mt-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg font-medium mb-2">
-            Dibuat dengan ❤️ oleh Jerico sebagai portfolio untuk PT Sebangku Jaya Abadi
+            Dibuat oleh Jerico Christianto
           </p>
           <p className="text-sm opacity-90">
-            Menggabungkan teknologi React & Laravel dengan metodologi CPA dan Story Based Learning
           </p>
         </div>
       </footer>

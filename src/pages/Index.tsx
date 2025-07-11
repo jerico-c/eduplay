@@ -62,7 +62,7 @@ const Index = () => {
             <div className="relative mb-8">
               <div className="w-48 h-48 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
                 <img 
-                  src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+                  src="/image/jero.png" 
                   alt="Jero the Rhino" 
                   className="w-40 h-40 object-contain"
                 />
@@ -151,7 +151,7 @@ const Index = () => {
             <div className="flex justify-center space-x-8 mb-4">
               <div className="flex flex-col items-center" title="Candi Prambanan">
                 <img 
-                  src="/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png" 
+                  src="/image/candi.png" 
                   alt="Candi" 
                   className="w-12 h-12 object-contain mb-1"
                 />
@@ -159,7 +159,7 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center" title="Blangkon">
                 <img 
-                  src="/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png" 
+                  src="/image/blangkon.png" 
                   alt="Blangkon" 
                   className="w-12 h-12 object-contain mb-1"
                 />
@@ -167,7 +167,7 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center" title="Keris">
                 <img 
-                  src="/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png" 
+                  src="/image/keris.png" 
                   alt="Keris" 
                   className="w-12 h-12 object-contain mb-1"
                 />
@@ -175,7 +175,7 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center" title="Wayang">
                 <img 
-                  src="/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png" 
+                  src="/image/wayang.png" 
                   alt="Wayang" 
                   className="w-12 h-12 object-contain mb-1"
                 />
@@ -183,7 +183,7 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center" title="Gamelan">
                 <img 
-                  src="/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png" 
+                  src="/image/gamelan.png" 
                   alt="Gamelan" 
                   className="w-12 h-12 object-contain mb-1"
                 />
@@ -201,7 +201,7 @@ const Index = () => {
       <footer className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-6 mt-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg font-medium">
-            Dibuat dengan ❤️ oleh Jerico sebagai portfolio untuk PT Sebangku Jaya Abadi
+            Dibuat oleh Jerico Christianto
           </p>
           <div className="flex justify-center items-center space-x-2 mt-2">
             <Star className="w-4 h-4 text-yellow-300" />

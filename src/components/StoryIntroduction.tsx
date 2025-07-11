@@ -12,22 +12,22 @@ const StoryIntroduction = ({ onComplete }: StoryIntroductionProps) => {
 
   const storySlides = [
     {
-      image: "🦏",
+      image: '/image/jero.png',
       title: "Perkenalan Jero",
       text: "Hai! Aku Jero, seekor badak Jawa yang tinggal di dekat Candi Prambanan. Aku suka sekali belajar matematika!"
     },
     {
-      image: "🏛️",
+      image: "/image/candi.png",
       title: "Candi Ajaib",
       text: "Suatu hari, aku menemukan sebuah candi ajaib yang penuh dengan teka-teki matematika. Maukah kamu membantuku memecahkannya?"
     },
     {
-      image: "👑",
+      image: "/image/blangkon.png",
       title: "Harta Karun Blangkon",
       text: "Di dalam candi ini tersimpan harta karun berupa blangkon emas! Tapi untuk mendapatkannya, kita harus menyelesaikan tantangan matematika."
     },
     {
-      image: "✨",
+      image: "/image/jero.png",
       title: "Petualangan Dimulai",
       text: "Ayo mulai petualangan kita! Kita akan belajar matematika dengan cara yang menyenangkan menggunakan metode CPA."
     }
@@ -54,9 +54,11 @@ const StoryIntroduction = ({ onComplete }: StoryIntroductionProps) => {
       <div className="max-w-2xl mx-auto">
         {/* Story Content */}
         <div className="text-center mb-8">
-          <div className="text-8xl mb-6 animate-bounce">
-            {currentStory.image}
-          </div>
+          <img
+            src={currentStory.image}
+            alt={currentStory.title}
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 object-contain animate-bounce"
+          />
           <h3 className="text-2xl font-bold mb-4 text-gray-800">
             {currentStory.title}
           </h3>

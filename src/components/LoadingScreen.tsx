@@ -5,9 +5,13 @@ const LoadingScreen = () => {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardContent className="text-center py-16">
-        <div className="text-8xl mb-6 animate-bounce">
-          🦏
-        </div>
+        <div className="w-48 h-48 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+                <img 
+                  src="/image/jero.png" 
+                  alt="Jero the Rhino" 
+                  className="w-40 h-40 object-contain"
+                />
+              </div>
         
         <h2 className="text-3xl font-bold mb-4 text-gray-800">
           Jero sedang menyiapkan petualangan...

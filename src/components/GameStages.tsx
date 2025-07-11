@@ -57,11 +57,11 @@ const GameStages = ({
     // Get other object images for distractors
     const allObjects = ['Blangkon', 'Wayang', 'Gamelan', 'Candi', 'Keris'];
     const objectImages: { [key: string]: string } = {
-      'Blangkon': '/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png',
-      'Wayang': '/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png',
-      'Gamelan': '/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png',
-      'Candi': '/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png',
-      'Keris': '/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png'
+      'Blangkon': '/image/blangkon.png',
+      'Wayang': '/image/wayang.png',
+      'Gamelan': '/image/gamelan.png',
+      'Candi': '/image/candi.png',
+      'Keris': '/image/keris.png'
     };
     
     const otherObjects = allObjects.filter(obj => obj !== currentLevel.concrete.objectName);
@@ -158,7 +158,7 @@ const GameStages = ({
               className="w-full h-48 border-4 border-dashed border-orange-300 rounded-lg flex flex-col items-center justify-center bg-orange-50 hover:bg-orange-100 transition-colors"
             >
               <img 
-                src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+                src="/image/jero.png" 
                 alt="Jero the Rhino" 
                 className="w-16 h-16 object-contain mb-2"
               />
@@ -204,7 +204,7 @@ const GameStages = ({
       <CardContent className="text-center">
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+            src="/image/jero.png" 
             alt="Jero the Rhino" 
             className="w-24 h-24 object-contain mx-auto mb-4"
           />
@@ -254,7 +254,7 @@ const GameStages = ({
       <CardContent className="text-center">
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/5788e927-3e19-4a2f-9aad-7d2efc0b0674.png" 
+            src="/image/jero.png" 
             alt="Jero the Rhino" 
             className="w-24 h-24 object-contain mx-auto mb-4"
           />

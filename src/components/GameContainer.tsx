@@ -27,11 +27,11 @@ const GameContainer = ({ onBackToHome }: GameContainerProps) => {
     
     const objects = ['Blangkon', 'Wayang', 'Gamelan', 'Candi', 'Keris'];
     const objectImages: { [key: string]: string } = {
-      'Blangkon': '/lovable-uploads/25813aa2-2089-4339-8de8-5fae09a50e0d.png',
-      'Wayang': '/lovable-uploads/cee0e54c-8939-455a-a506-4aa8afe5f925.png',
-      'Gamelan': '/lovable-uploads/f6ef34f3-4f02-4ab7-900d-28540363897e.png',
-      'Candi': '/lovable-uploads/4412f89d-8845-45eb-a0a4-33429e5eeeb2.png',
-      'Keris': '/lovable-uploads/1f175be5-3223-49f1-a055-b058bbb7d16b.png'
+      'Blangkon': '/image/blangkon.png',
+      'Wayang': '/image/wayang.png',
+      'Gamelan': '/image/gamelan.png',
+      'Candi': '/image/candi.png',
+      'Keris': '/image/keris.png'
     };
 
     return Array.from({ length: 5 }, (_, index) => {
@@ -241,7 +241,7 @@ const GameContainer = ({ onBackToHome }: GameContainerProps) => {
       <footer className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-4 mt-8">
         <div className="container mx-auto px-4 text-center">
           <p className="font-medium">
-            Dibuat dengan ❤️ oleh Jerico sebagai portfolio untuk PT Sebangku Jaya Abadi
+            Dibuat oleh Jerico Christianto
           </p>
         </div>
       </footer>
