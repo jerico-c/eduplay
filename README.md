@@ -1,7 +1,3 @@
-Tentu saja. Berikut adalah contoh dokumentasi README.md yang lengkap dan ramah untuk developer pemula, sesuai dengan permintaan Anda.
-
------
-
 # Jerico EduPlay 🎮
 
 **Jerico EduPlay** adalah sebuah game edukasi interaktif berbasis web yang dirancang untuk mengajarkan konsep matematika dasar kepada anak-anak usia 4-6 tahun. Aplikasi ini dikembangkan sebagai proyek portofolio *full-stack* yang mendemonstrasikan implementasi metodologi pedagogi modern **(CPA & Story-Based Learning)** dalam sebuah produk teknologi yang fungsional dan menyenangkan.
@@ -194,15 +190,3 @@ Berikut adalah beberapa fitur yang direncanakan untuk pengembangan selanjutnya:
   - [ ] Sistem Papan Skor (Leaderboard).
   - [ ] Level Editor/CMS sederhana untuk menambah soal tanpa *coding*.
   - [ ] Peningkatan animasi dan efek suara untuk pengalaman yang lebih imersif.
-
------
-
-## Kontribusi 🤝
-
-Saat ini proyek ini dikelola sebagai portofolio individu, namun masukan dan ide selalu diterima. Jika Anda menemukan bug atau memiliki saran, silakan buat *Issue* baru.
-
------
-
-## Lisensi 📄
-
-Proyek ini dilisensikan di bawah **MIT License**. Lihat file `LICENSE` untuk detail lebih lanjut.
