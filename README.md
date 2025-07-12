@@ -53,8 +53,8 @@ Sebelum memulai, pastikan Anda sudah menginstal perangkat lunak berikut:
 1.  **Clone repository:**
 
     ```bash
-    git clone https://github.com/jerico-c/jerico-eduplay.git
-    cd jerico-eduplay/backend
+    git clone https://github.com/jerico-c/eduplay.git
+    cd eduplay
     ```
 
 2.  **Instal dependensi PHP:**
