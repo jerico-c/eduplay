@@ -191,14 +191,3 @@ Here are some features planned for future development:
   - [ ]  Simple Level Editor/CMS to add new questions without coding.
   - [ ]  Enhanced animations and sound effects for a more immersive experience.
 
------
-
-## Contributing 🤝
-
-This project is currently maintained as an individual portfolio, but feedback and ideas are always welcome. If you find a bug or have a suggestion, please create a new *Issue*.
-
------
-
-## License 📄
-
-This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
