@@ -53,8 +53,8 @@ Before you begin, ensure you have the following software installed:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/jerico-eduplay.git
-    cd jerico-eduplay/backend
+    git clone https://github.com/jerico-c/eduplay.git
+    cd eduplay
     ```
 
 2.  **Install PHP dependencies:**
