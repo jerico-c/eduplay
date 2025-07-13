@@ -1,7 +1,3 @@
-Of course. Here is the README documentation in English, maintaining the user-friendly format for beginner developers.
-
------
-
 # Jerico EduPlay 🎮
 
 **Jerico EduPlay** is an interactive educational web game designed to teach basic math concepts to children aged 4-6. This application was developed as a full-stack portfolio project to demonstrate the implementation of modern pedagogical methodologies **(CPA & Story-Based Learning)** into a functional and fun tech product.
