@@ -6,7 +6,7 @@
 
 ![home page](public/image/screenshot/home_page2.png)
 
-![home page](public/image/screenshot/intro.png)
+![intro](public/image/screenshot/intro.png)
 
 -----
 
