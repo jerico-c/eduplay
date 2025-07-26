@@ -8,7 +8,7 @@
 
 ![intro](public/image/screenshot/intro.png)
 
-![intro](public/image/screenshot/game.png)
+![intro](public/image/screenshot/game1.png)
 
 -----
 
