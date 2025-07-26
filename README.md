@@ -8,6 +8,8 @@
 
 ![intro](public/image/screenshot/intro.png)
 
+![intro](public/image/screenshot/game.png)
+
 -----
 
 ## Table of Contents 📖
