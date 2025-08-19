@@ -10,7 +10,7 @@
 
 ![game](public/image/screenshot/game1.png)
 
-![game](public/image/screenshot/game1.png)
+![game](public/image/screenshot/game2.png)
 
 -----
 
