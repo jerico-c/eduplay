@@ -24,7 +24,6 @@
 6.  [Common Troubleshooting](https://www.google.com/search?q=%23common-troubleshooting-)
 7.  [Development Roadmap](https://www.google.com/search?q=%23development-roadmap-)
 8.  [Contributing](https://www.google.com/search?q=%23contributing-)
-9.  [License](https://www.google.com/search?q=%23license-)
 
 -----
 
